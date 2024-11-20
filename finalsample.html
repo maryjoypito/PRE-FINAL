@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Background</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+
+      /* Animated GIF Background */
+      background-image: url('the.gif'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .container {
+      text-align: center;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.6); /* Transparent black overlay */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    img {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      width: 120px;
+      height: 160px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+
+    button {
+      background-color: #d968e4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff08ff9f;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>POWERPUFF GIRLS!</h1>
+    
+    <img id="myImage" src="p.gif">
+    
+    <p>
+      <button type="button" onclick="changeImage()">Click Me!</button>
+    </p>
+  </div>
+
+  <script>
+    function changeImage() {
+      const imageElement = document.getElementById('myImage');
+      if (imageElement.src.includes('p.gif')) {
+        imageElement.src = 'dancing.gif'; // First GIF
+      } else {
+        imageElement.src = 'p.gif'; // Revert to original image
+      }
+    }
+  </script>
+
+</body>
+</html>
